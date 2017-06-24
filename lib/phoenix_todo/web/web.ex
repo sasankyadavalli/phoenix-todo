@@ -57,6 +57,20 @@ defmodule PhoenixTodo.Web do
     end
   end
 
+  def schema do
+    quote do
+      use Ecto.Schema
+
+      # use binary ids for all keys
+      @primary_key {:id, :binary_id, autogenerate: true}
+      @foreign_key_type :binary_id
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+    end
+  end
+  
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """
