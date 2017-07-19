@@ -6,7 +6,7 @@ defmodule PhoenixTodo.Repo.Migrations.AddTodosTable do
       add :id, :binary_id, primary_key: false
       add :todo, :string
       add :description, :string
-      add :completed, :boolean
+      add :completed, :boolean, default: false
 
       timestamps()
     end
